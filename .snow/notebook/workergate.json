@@ -1,0 +1,32 @@
+{
+  "src/index.ts": [
+    {
+      "id": "notebook-1791274800869_gxq2889n2",
+      "filePath": "src/index.ts",
+      "note": "无会话头请求按新会话规则选号并透传，但不落库 KV，以避免消耗 Cloudflare 免费版每日 1000 次写配额",
+      "createdAt": "2026-10-06T16:20:00.869",
+      "updatedAt": "2026-10-06T16:20:00.869"
+    },
+    {
+      "id": "notebook-1791274800869_t38mt2xsr",
+      "filePath": "src/index.ts",
+      "note": "新会话选号：并发 10s 超时请求各上游 GET /v1/account/select?model={model_id}，选取最先过期的 account_id，转发请求附加 x-account-id 请求头",
+      "createdAt": "2026-10-06T16:20:00.869",
+      "updatedAt": "2026-10-06T16:20:00.869"
+    },
+    {
+      "id": "notebook-1791274800869_bzh70fksr",
+      "filePath": "src/index.ts",
+      "note": "双级缓存层级：内存 Map (L1，含 12h 过期时间戳校验) -> Cloudflare KV (L2，TTL 12h)",
+      "createdAt": "2026-10-06T16:20:00.869",
+      "updatedAt": "2026-10-06T16:20:00.869"
+    },
+    {
+      "id": "notebook-1791274800869_py6dt5vvo",
+      "filePath": "src/index.ts",
+      "note": "WorkerGate 核心路由设计：统一通过 extractSessionId 识别会话头，优先 session-id 次选 *-session-id",
+      "createdAt": "2026-10-06T16:20:00.869",
+      "updatedAt": "2026-10-06T16:20:00.869"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+name = "workergate"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[vars]
+MODELS = "deepseek-v4.1-flash,glm-5.3-flash,qwen3.8-flash"
+
+[[kv_namespaces]]
+binding = "SESSION_KV"
+id = "<your-kv-namespace-id>"
